@@ -1,14 +1,106 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Sinhala:wght@700&family=Noto+Serif+Tamil:wght@700&family=Playfair+Display:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
-body {
+/* This ensures the dark background covers the whole browser window */
+body, html, #root {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #050401; /* Matches the darkest part of the card */
+  overflow-x: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
 }
+
+/* Shimmer animation for the year */
+.ny-year {
+  font-size: clamp(72px, 18vw, 120px);
+  font-weight: 900;
+  letter-spacing: -3px;
+  background: linear-gradient(135deg, #ffe07a 0%, #e8901a 45%, #f5c842 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: shimmer 3s ease-in-out infinite, fadeUp 0.8s ease both 0.1s;
+}
+
+.sunburst {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  transform: translate(-50%, -50%);
+  animation: sunRotate 60s linear infinite;
+  pointer-events: none;
+}
+
+.sun-ray {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 3px;
+  height: 250px;
+  background: linear-gradient(to top, transparent, #f5c842);
+  transform-origin: bottom center;
+  opacity: 0.6;
+}
+
+.kolam-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation: kolamSpin 40s linear infinite;
+}
+
+.kolam-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #f5c842;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #f5c842;
+}
+
+.sunburst,
+.kolam-container {
+  filter: drop-shadow(0 0 20px rgba(245,200,66,0.4));
+  animation-timing-function: linear;
+}
+
+@keyframes glowPulse {
+  0%,100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+@keyframes kolamSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes sunRotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+/* Fade-up animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Greetings animations */
+.ny-sinhala, .ny-tamil, .ny-eng {
+  opacity: 0;
+  animation: fadeUp 0.8s ease both;
+}
+
+.ny-sinhala { animation-delay: 0.3s; }
+.ny-tamil  { animation-delay: 0.5s; }
+.ny-eng    { animation-delay: 0.7s; }
