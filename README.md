@@ -1,6 +1,6 @@
 # Sinhala & Tamil New Year 2026 🎉
 
-A React-based greeting website celebrating **Sinhala & Tamil New Year (Avurudu / Puthandu)**.  
+A React-based greeting website celebrating **Sinhala & Tamil New Year **.  
 This project displays a festive New Year greeting with traditional design elements.
 
 ---
