@@ -29,7 +29,17 @@ body, html, #root {
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 20px;
+  margin: 10px 0;
 }
+
+.ny-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(circle at center, #2a1a00, #050401);
+  animation: bgMove 10s ease-in-out infinite;
+}
+
 
 .sunburst {
   position: absolute;
@@ -38,8 +48,9 @@ body, html, #root {
   width: 600px;
   height: 600px;
   transform: translate(-50%, -50%);
-  animation: sunRotate 60s linear infinite;
+  animation: rotateSun 80s linear infinite;
   pointer-events: none;
+  z-index: 1
 }
 
 .sun-ray {
@@ -55,14 +66,16 @@ body, html, #root {
   position: absolute;
   top: 50%;
   left: 50%;
-  animation: rotateClockwise 40s linear infinite;
+  transform: translate(-50%, -50%);
+  animation: rotateClockwise 40s linear infinite reverse;
+  z-index: 2;
 }
 
 .kolam-dot {
   position: absolute;
   width: 6px;
   height: 6px;
-  background: #f5c842;
+  background: #483702;
   border-radius: 50%;
   box-shadow: 0 0 8px #f5c842;
 }
@@ -93,6 +106,35 @@ body, html, #root {
 .particle:nth-child(even) {
   left: 70%;
   animation-delay: 3s;
+}
+
+.ny-page {
+  height: 100%;
+  gap: 0.6rem; 
+  justify-content: center;
+  transform: scale(0.85); 
+  transform-origin: center;
+}
+
+.ny-root {
+  height: 100vh;          
+  overflow: hidden;       
+}
+
+@keyframes bgMove {
+  0%   { transform: scale(1); opacity: 1; }
+  50%  { transform: scale(1.1); opacity: 0.9; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes rotateSun {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes rotateKolam {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 @keyframes floatParticle {
