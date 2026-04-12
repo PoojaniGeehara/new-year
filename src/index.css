@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;700&family=Noto+Sans+Tamil:wght@400;700&display=swap');
 body, html, #root {
   margin: 0;
   padding: 0;
@@ -127,17 +127,30 @@ body, html, #root {
   50%      { background-position: 100% 50%; }
 }
 
-/* Fade-up animation */
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(18px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Greetings animations */
-.ny-sinhala, .ny-tamil, .ny-eng {
-  opacity: 0;
-  text-shadow: 0 0 15px rgba(245,200,66,0.6);
-  animation: textGlow 3s infinite;
+.ny-sinhala {
+  color: #f5c842;
+  font-size: 2rem;
+  font-family: 'Noto Sans Sinhala', sans-serif;
+  text-shadow: 0 0 10px rgba(245,200,66,0.8);
+}
+
+.ny-tamil {
+  color: #ff9f2f;
+  font-size: 1.8rem;
+   font-family: 'Noto Sans Tamil', sans-serif;
+  text-shadow: 0 0 10px rgba(255,159,47,0.8);
+}
+
+.ny-eng {
+  color: #d4af37;
+  font-style: italic;
+  letter-spacing: 3px;
 }
 
 .ny-sinhala { animation-delay: 0.3s; }
