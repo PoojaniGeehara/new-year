@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import Background from "./Background";
 import Sunburst from "./Sunburst";
 import KolamDots from "./KolamDots";
-import Particles from "./Particles";
 import OilLamp from "./OilLamp";
 import Year from "./Year";
 import Greetings from "./Greetings";
@@ -82,8 +81,8 @@ export default function NewYearCard() {
       <Sunburst />
       <KolamDots />
       <div className="center-glow" />   
-      <Particles /> 
-      
+     
+
       <div className="ny-page">
         <OilLamp />
         <Year />
