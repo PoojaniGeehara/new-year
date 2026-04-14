@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/PoojaniGeehara/new-year.git/static/css/main.537bcec6.css",
+    "main.js": "/PoojaniGeehara/new-year.git/static/js/main.db0012d3.js",
+    "static/js/453.69dba1ef.chunk.js": "/PoojaniGeehara/new-year.git/static/js/453.69dba1ef.chunk.js",
+    "index.html": "/PoojaniGeehara/new-year.git/index.html",
+    "main.537bcec6.css.map": "/PoojaniGeehara/new-year.git/static/css/main.537bcec6.css.map",
+    "main.db0012d3.js.map": "/PoojaniGeehara/new-year.git/static/js/main.db0012d3.js.map",
+    "453.69dba1ef.chunk.js.map": "/PoojaniGeehara/new-year.git/static/js/453.69dba1ef.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.537bcec6.css",
+    "static/js/main.db0012d3.js"
+  ]
+}
